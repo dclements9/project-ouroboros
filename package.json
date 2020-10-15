@@ -1,0 +1,15 @@
+{
+  "name": "project-ouroboros",
+  "version": "1.0.0",
+  "description": "Video Looper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Video",
+    "Looper"
+  ],
+  "author": "Dylan Clements",
+  "license": "MIT"
+}
