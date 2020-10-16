@@ -6,12 +6,20 @@
 // Test video:
 //let video = 'Zp1FGa68mXI';
 
-let video = '';
 
 
 
-// Add function here
-let videoPlayer = 
-    `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}?loop=1&playlist=${video}" frameborder="0" allowfullscreen></iframe>`;
+inputButton.addEventListener('click', function() {
+    let video = '';
+    const inputLink = document.getElementById("link").value
 
-document.getElementById("loopPlayer").innerHTML = videoPlayer;
+    if (inputLink === ''){
+        document.getElementById("loopPlayer").innerHTML = 'Please Enter a YouTube Link to Begin the Loop';
+    }else{
+        video = retrieveVideoVariable(inputLink);
+        let videoPlayer = 
+            `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}?loop=1&playlist=${video}" frameborder="0" allowfullscreen></iframe>`;
+        document.getElementById("loopPlayer").innerHTML = videoPlayer;
+    }
+});
+
