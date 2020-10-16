@@ -1,14 +1,3 @@
-//TODO: 
-// 1. Add field for video input
-// 2. Add function to sanitize video variable
-// 3. Add function to display video in loopPlayer div 
-
-// Test video:
-//let video = 'Zp1FGa68mXI';
-
-
-
-
 inputButton.addEventListener('click', function() {
     let video = '';
     const inputLink = document.getElementById("link").value
