@@ -23,3 +23,8 @@ inputButton.addEventListener('click', function() {
     }
 });
 
+function retrieveVideoVariable(fullLink){
+    const linkSplit = fullLink.split('=');
+
+    return linkSplit[1];
+}
