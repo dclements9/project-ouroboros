@@ -4,5 +4,4 @@
 
 Video Looper Project
 
-Temporary Demo Link:
-    http://www.project-ouroboros.com/
+Demo Link: https://www.project-ouroboros.com/
