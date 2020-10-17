@@ -7,7 +7,7 @@ inputButton.addEventListener('click', function() {
     }else{
         video = retrieveVideoVariable(inputLink);
         let videoPlayer = 
-            `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}?loop=1&playlist=${video}" frameborder="0" allowfullscreen></iframe>`;
+            `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}?loop=1&playlist=${video}" frameborder="1" allowfullscreen></iframe>`;
         document.getElementById("loopPlayer").innerHTML = videoPlayer;
     }
 });
