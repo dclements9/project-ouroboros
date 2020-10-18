@@ -1,3 +1,7 @@
+//TODO: 
+// 1. List all previous loops (More than most recent one)
+// 2. Give choice to delete previous loops from cookie.
+
 listPreviousLoops();
 
 inputButton.addEventListener('click', function() {
