@@ -16,7 +16,7 @@ inputButton.addEventListener('click', function() {
             `<iframe title="loopPlayer" width="560" height="315" src="https://www.youtube.com/embed/${video}?loop=1&playlist=${video}" frameborder="1" allowfullscreen></iframe>`;
         document.getElementById("loopPlayer").innerHTML = videoPlayer;
 
-        document.cookie=`previousLink=https://www.youtube.com/embed/${video}?loop=1&playlist=${video}`;
+        document.cookie=`previousLink=https://www.youtube.com/embed/${video}?loop=1&playlist=${video}; path=/; max-age=31536000"`;
     }
 });
 
@@ -27,7 +27,7 @@ function retrieveVideoVariable(fullLink) {
 }
 
 function listPreviousLoops() {
-    console.log(document.cookie)
+
     if (document.cookie){
         const cookies = document.cookie;
         const cookiesList = cookies.split('=');
