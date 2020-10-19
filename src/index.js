@@ -27,10 +27,15 @@ function retrieveVideoVariable(fullLink) {
 }
 
 function listPreviousLoops() {
-    const cookies = document.cookie;
-    const cookiesList = cookies.split('=');
-    const cookieLink = cookiesList[3];
+    console.log(document.cookie)
+    if (document.cookie){
+        const cookies = document.cookie;
+        const cookiesList = cookies.split('=');
+        const cookieLink = cookiesList[3];
     
-    let previousPlayer = `<iframe title="previousLoopPlayer" width="560" height="315" src="https://www.youtube.com/embed/${cookieLink}?loop=1&playlist=${cookieLink}" frameborder="1" allowfullscreen></iframe>`;
-    document.getElementById("previousLoops").innerHTML = previousPlayer;
+        let previousPlayer = `<iframe title="previousLoopPlayer" width="560" height="315" src="https://www.youtube.com/embed/${cookieLink}?loop=1&playlist=${cookieLink}" frameborder="1" allowfullscreen></iframe>`;
+        document.getElementById("previousLoops").innerHTML = previousPlayer;
+    }else{
+        document.getElementById("previousLoops").innerHTML = "Get to Looping";
+    }
  }
