@@ -6,7 +6,7 @@ listPreviousLoops();
 
 inputButton.addEventListener('click', function() {
     let video = '';
-    const inputLink = document.getElementById("link").value
+    const inputLink = document.getElementById("linkInput").value
 
     if (inputLink === ''){
         document.getElementById("loopPlayer").innerHTML = 'Please Enter a YouTube Link to Begin the Loop';
