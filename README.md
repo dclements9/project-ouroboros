@@ -7,7 +7,7 @@
     Uses **persistent cookies** to allow the previous 'Loop' to be saved for later reference.
 
 ## Install & Use
-    1. 'git clone https://github.com/dclements9/project-ouroboros.git'
+    1. `git clone https://github.com/dclements9/project-ouroboros.git`
     2. Open index.html in a web browser. 
     3. Enter the YouTube link into the input field
     4. Press the button and Fire Away!
