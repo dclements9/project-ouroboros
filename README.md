@@ -16,3 +16,8 @@
 
 ## Live Demo 
     https://www.project-ouroboros.com/
+
+## TODO
+1. Filter text after link.
+2. List all previous loops (More than most recent one)
+3. Give choice to delete previous loops from cookie.
