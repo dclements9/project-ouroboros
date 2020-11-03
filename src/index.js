@@ -18,8 +18,9 @@ inputButton.addEventListener('click', function() {
 
 function retrieveVideoVariable(fullLink) {
     const linkSplit = fullLink.split('=');
+    const secondLinkSplit = linkSplit[1].split('&');
 
-    return linkSplit[1];
+    return secondLinkSplit[0];
 }
 
 function listPreviousLoops() {
