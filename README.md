@@ -18,5 +18,6 @@
     https://www.project-ouroboros.com/
 
 ## TODO
-1. List all previous loops (More than most recent one)
-2. Give choice to delete previous loops from cookie.
+1. Video Search & Display List
+2. List all previous loops (More than most recent one)
+3. Give choice to delete previous loops from cookie.
