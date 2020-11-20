@@ -59,9 +59,9 @@ function displayResults(data){
         let videoID = data.items[i].id.videoId;
         let videoLink = `https://www.youtube.com/watch?v=${videoID}`
 
-        let clickableLink = <a href={`https://www.youtube.com/watch?v=${videoID}`}> Test</a>
+        let link = `<a href="' + ${videoLink} + '">${title}</a>`
 
         document.getElementById('forEachResults').innerHTML += 
-        thumbnail + videoLink + title + clickableLink + '<br>' + '<br>';
+        thumbnail + ' ' + link + '<br>' + '<br>';
     }
 }
