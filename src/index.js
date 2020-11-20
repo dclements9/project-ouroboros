@@ -35,8 +35,6 @@ function listPreviousLoops() {
     }
  }
 
-let results = '';
-
  function testSearch(){
      // Begin Test Terms
     const searchTerms = ["factory%20functions","data%20structures", "array%20functions%20javascript", "composition%20over%20inheritance", "lambda%20functions", "streams%20java", "higher%20order%functions%javascript", "functional%20programming", "c++%20lambda%20functions", "sorting%20algorithms"];//a function to get a random search term
@@ -59,38 +57,15 @@ let results = '';
     });
 }
 
-///////////////////BEGIN WORKING//////////////
-
-// function displayResults(){
-//     //let i = 0;
-//     console.log(results.items.length)
-//     console.log(results.items[0].snippet.thumbnails.default.url)
-
-//     for (let i = 0; i < results.items.length; i++){
-//         console.log(results.items[i]);
-//         console.log(results.items[i].snippet.thumbnails.default.url);
-        
-//         //console.log("This is source:");
-
-//         // Testing below
-//         document.getElementById('forEachResults').innerHTML += `<img src=${results.items[i].snippet.thumbnails.default.url}/>`;
-//     }
-
-// }
-
-///////////////////END WORKING//////////////
-
-
-
-
-// Below is old
-
 function displayResults(data){
     for (let i = 0; i < data.items.length; i++){
         console.log(data.items[i]);
-        console.log(data.items[i].snippet.thumbnails.default.url);
 
-        document.getElementById('forEachResults').innerHTML += `<img src=https://i.ytimg.com/vi/R8rmfD9Y5-c/default.jpg/>` + '<br>';
+        let thumbnail = `<img src=${data.items[i].snippet.thumbnails.default.url}>`
+        let title = data.items[i].snippet.title
+
+        document.getElementById('forEachResults').innerHTML += 
+        thumbnail + ' ' + title + '<br>' + '<br>';
     }
 
 }
