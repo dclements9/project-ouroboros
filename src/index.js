@@ -54,10 +54,14 @@ function displayResults(data){
     for (let i = 0; i < data.items.length; i++){
         console.log(data.items[i]);
 
-        let thumbnail = `<img src=${data.items[i].snippet.thumbnails.default.url}>`
-        let title = data.items[i].snippet.title
+        let thumbnail = `<img src=${data.items[i].snippet.thumbnails.default.url}>`;
+        let title = data.items[i].snippet.title;
+        let videoID = data.items[i].id.videoId;
+        let videoLink = `https://www.youtube.com/watch?v=${videoID}`
+
+        let clickableLink = <a href={`https://www.youtube.com/watch?v=${videoID}`}> Test</a>
 
         document.getElementById('forEachResults').innerHTML += 
-        thumbnail + ' ' + title + '<br>' + '<br>';
+        thumbnail + videoLink + title + clickableLink + '<br>' + '<br>';
     }
 }
