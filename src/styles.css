@@ -42,3 +42,6 @@ body {
 iframe{
   border: groove;
 }
+#forEachResults{
+  text-align: left;
+}
