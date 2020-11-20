@@ -46,13 +46,6 @@ function listPreviousLoops() {
     fetch(url)
     .then(response => response.json())
     .then(data => {    
-        //console.log(data.items[0]);
-        //console.log(data.items[0].id.videoId);
-// BEGIN WORKING
-        // results = data;
-// END WORKING
-        //document.querySelector("#searchResultsFrame").src = `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
-
         displayResults(data)
     });
 }
@@ -67,5 +60,4 @@ function displayResults(data){
         document.getElementById('forEachResults').innerHTML += 
         thumbnail + ' ' + title + '<br>' + '<br>';
     }
-
 }
