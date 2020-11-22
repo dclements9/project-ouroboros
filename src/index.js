@@ -61,12 +61,7 @@ function displayResults(data){
 
         let link = `<a href=${videoLink}>${title}</a>`
 
-        // document.getElementById('forEachResults').innerHTML += 
-        // thumbnail + ' ' + link + '<br>' + '<br>';
-
         document.getElementById('forEachResults').innerHTML += 
-        thumbnail + '<br>' + '<br>';
-
-        document.getElementById('forEachResults').innerHTML += link;
+        thumbnail + ' ' + link + '<br>' + '<br>';
     }
 }
