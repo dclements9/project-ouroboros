@@ -40,7 +40,7 @@ function listPreviousLoops() {
     const searchTerms = ["factory%20functions","data%20structures", "array%20functions%20javascript", "composition%20over%20inheritance", "lambda%20functions", "streams%20java", "higher%20order%functions%javascript", "functional%20programming", "c++%20lambda%20functions", "sorting%20algorithms"];//a function to get a random search term
     const getSearchTerm = () => searchTerms[Math.floor(Math.random() * (searchTerms.length-1))];
     // End Test Terms
-    const YOUTUBE_API_KEY = "AIzaSyBIv9avbAnnRGx73ScR5cfTwRKu6O1WmGI";
+    const YOUTUBE_API_KEY = "";
     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${getSearchTerm()}&key=${YOUTUBE_API_KEY}`;
 
     fetch(url)
@@ -59,9 +59,14 @@ function displayResults(data){
         let videoID = data.items[i].id.videoId;
         let videoLink = `https://www.youtube.com/watch?v=${videoID}`
 
-        let link = `<a href="' + ${videoLink} + '">${title}</a>`
+        let link = `<a href=${videoLink}>${title}</a>`
+
+        // document.getElementById('forEachResults').innerHTML += 
+        // thumbnail + ' ' + link + '<br>' + '<br>';
 
         document.getElementById('forEachResults').innerHTML += 
-        thumbnail + ' ' + link + '<br>' + '<br>';
+        thumbnail + '<br>' + '<br>';
+
+        document.getElementById('forEachResults').innerHTML += link;
     }
 }
