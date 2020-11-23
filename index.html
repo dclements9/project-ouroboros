@@ -13,23 +13,28 @@
     <h1>Project Ouroboros</h1>
   </br>
 
+  <!-- Search Button and field for YTSearch -->
   <div id="searchDiv">
     <input type="search" id="searchTermInput" placeholder="Enter Search Term" size="50">
   </br>
   </br>
     <button id="searchTermButton" onClick="searchYT()">Click Me to Search</button>
   </div>
-</br>
-  <iframe name="searchResultsFrame" id="searchResultsFrame"></iframe>
-</br>  
+  </br>
 
   <!-- Display Results for YT Search -->
   <div id="forEachResults"></div>
 
+  <!-- Loop Player -->
+  <iframe name="searchResultsFrame" id="searchResultsFrame"></iframe>
+</br>  
+
 </br>
 </br>
+
+<!-- Original Loop Input & Player -->
     <div id="inputDiv">
-      <input type="search" placeholder="Enter Video Link to Loop" id="linkInput" size="50"></input>
+      <input type="text" placeholder="Enter Video Link to Loop" id="linkInput" size="50"></input>
 </br>
 </br>
       <button id='inputButton'>Loop away</button>
@@ -39,6 +44,8 @@
     <div id=loopPlayer></div>
 </br>
 </br>
+
+  <!-- Display Previous Loop -->
     <label>Previous Loop:</label>
 </br>
 </br>
