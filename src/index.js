@@ -35,13 +35,11 @@ function listPreviousLoops() {
     }
  }
 
- function testSearch(){
-     // Begin Test Terms
-    const searchTerms = ["factory%20functions","data%20structures", "array%20functions%20javascript", "composition%20over%20inheritance", "lambda%20functions", "streams%20java", "higher%20order%functions%javascript", "functional%20programming", "c++%20lambda%20functions", "sorting%20algorithms"];//a function to get a random search term
-    const getSearchTerm = () => searchTerms[Math.floor(Math.random() * (searchTerms.length-1))];
-    // End Test Terms
+ function searchYT(){
     const YOUTUBE_API_KEY = "";
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${getSearchTerm()}&key=${YOUTUBE_API_KEY}`;
+
+    const searchTerm = document.getElementById("searchTermInput").value;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${searchTerm}&key=${YOUTUBE_API_KEY}`;
 
     fetch(url)
     .then(response => response.json())
