@@ -39,7 +39,7 @@ function searchYT() {
     const YOUTUBE_API_KEY = "";
 
     const searchTerm = document.getElementById("searchTermInput").value;
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${searchTerm}&key=${YOUTUBE_API_KEY}`;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${searchTerm}&type="video"&key=${YOUTUBE_API_KEY}`;
 
     fetch(url)
         .then(response => response.json())
@@ -57,17 +57,17 @@ function displayResults(data) {
         let videoID = data.items[i].id.videoId;
         let videoLink = `https://www.youtube.com/watch?v=${videoID}`
 
-        // let link = `<a href=${videoLink} onclick="selectVideo(${videoID})">${title} </a>`
-        // let link = `<a href="#" onclick="selectVideo(${videoID});return false;">${title} </a>`
-        let link = `<a href="#" onclick="selectVideo();return false;">${title} </a>`
+        //let link = `<a href=${videoLink} onclick="selectVideo(${videoID})">${title} </a>`
+        let link = `<a href="#" onclick="selectVideo(${videoID});return false;">${title} </a>`
+        //let link = `<a href="#" onclick="selectVideo();return false;">${title} </a>`
         
         document.getElementById('forEachResults').innerHTML +=
             thumbnail + ' ' + link + '<br>' + '<br>';
     }
 }
 
-function selectVideo() {
+function selectVideo(videoCode) {
     console.log("made it")
-
+    console.log(videoCode)
     return false;
 }
