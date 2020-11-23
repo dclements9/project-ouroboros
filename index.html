@@ -12,24 +12,17 @@
   <body>
     <h1>Project Ouroboros</h1>
   </br>
-    <div id="searchForm">
-      <form action="http://www.youtube.com/results" method="get" target="searchResultsFrame">
-        <input name="search_query" type="text" maxlength="128" />
-        </select>
-        <input type="submit" value="Search" />
-      </form>
-    </div>
-    <iframe name="searchResultsFrame" id="searchResultsFrame"></iframe>
-  </br>  
 
-  <!-- Begin Testing forEach Display Results -->
-
-  <button onclick="testSearch()">Invoke testSearch</button>  
-
-  <div id="forEachResults">
-
+  <div id="searchDiv">
+    <input type="text" id="searchTermInput">
+    <button id="searchTermButton" onClick="searchYT()">Click Me to Search</button>
   </div>
-  <!-- End Testing forEach Display Results -->
+</br>
+  <iframe name="searchResultsFrame" id="searchResultsFrame"></iframe>
+</br>  
+
+  <!-- Display Results for YT Search -->
+  <div id="forEachResults"></div>
 
 </br>
 </br>
