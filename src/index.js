@@ -57,29 +57,22 @@ function displayResults(data) {
     for (let i = 0; i < data.items.length; i++) {
         console.log(data.items[i]);
 
-        let thumbnail = `<img src=${data.items[i].snippet.thumbnails.default.url}>`;
         let title = data.items[i].snippet.title;
         let videoID = data.items[i].id.videoId;
         let videoLink = `https://www.youtube.com/watch?v=${videoID}`
 
-        //let link = `<a href=${videoLink} onclick="selectVideo(${videoID})">${title} </a>`
-        let link = `<a href="#" onclick='selectVideo(${videoID})'>${title}</a>`
-        //let link = `<a href="#" onclick="selectVideo();return false;">${title} </a>`
-        let button = document.createElement("button");
-        button.type = "button";
-        button.value = "Select Video";
-        button.onclick = selectVideo(videoID);
-
-
+        let thumbnail = `<a href='#' onclick=${selectVideo(videoID)}> 
+                            <img src=${data.items[i].snippet.thumbnails.default.url}>
+                        </a>`
 
         document.getElementById('forEachResults').innerHTML +=
-            thumbnail + ' ' + link + button + '<br>' + '<br>';
+            thumbnail + ' ' + title + '<br>' + '<br>';
     }
 }
 
 // Displays selected video displayResults()
 function selectVideo(videoCode) {
     console.log("made it")
-    //console.log(videoCode)
+    console.log(videoCode)
     return false;
 }
