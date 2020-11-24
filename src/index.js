@@ -1,5 +1,6 @@
 listPreviousLoops();
 
+// Original Input button to pull YT link and retrieve videoId with retrieveVideoVariable()
 inputButton.addEventListener('click', function () {
     let video = '';
     const inputLink = document.getElementById("linkInput").value
@@ -17,6 +18,7 @@ inputButton.addEventListener('click', function () {
     }
 });
 
+// Pulls videoID from link
 function retrieveVideoVariable(fullLink) {
     const linkSplit = fullLink.split('=');
     const secondLinkSplit = linkSplit[1].split('&');
@@ -24,6 +26,7 @@ function retrieveVideoVariable(fullLink) {
     return secondLinkSplit[0];
 }
 
+//  Lists the previously played video from local storage
 function listPreviousLoops() {
     if (localStorage.getItem('videoCode')) {
         const code = localStorage.getItem('videoCode')
@@ -35,6 +38,7 @@ function listPreviousLoops() {
     }
 }
 
+// Search YT and fetch data response
 function searchYT() {
     const YOUTUBE_API_KEY = "";
 
@@ -48,6 +52,7 @@ function searchYT() {
         });
 }
 
+// Displays results from searchYT()
 function displayResults(data) {
     for (let i = 0; i < data.items.length; i++) {
         console.log(data.items[i]);
@@ -58,16 +63,19 @@ function displayResults(data) {
         let videoLink = `https://www.youtube.com/watch?v=${videoID}`
 
         //let link = `<a href=${videoLink} onclick="selectVideo(${videoID})">${title} </a>`
-        let link = `<a href="#" onclick="selectVideo(${videoID});return false;">${title} </a>`
+        let link = `<a href="#" onclick='selectVideo(${videoID})'>${title}</a>`
         //let link = `<a href="#" onclick="selectVideo();return false;">${title} </a>`
-        
+        let button = document.createElement("BUTTON")    
+
+
         document.getElementById('forEachResults').innerHTML +=
-            thumbnail + ' ' + link + '<br>' + '<br>';
+            thumbnail + ' ' + link + button + '<br>' + '<br>';
     }
 }
 
+// Displays selected video displayResults()
 function selectVideo(videoCode) {
     console.log("made it")
-    console.log(videoCode)
+    //console.log(videoCode)
     return false;
 }
