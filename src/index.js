@@ -65,7 +65,11 @@ function displayResults(data) {
         //let link = `<a href=${videoLink} onclick="selectVideo(${videoID})">${title} </a>`
         let link = `<a href="#" onclick='selectVideo(${videoID})'>${title}</a>`
         //let link = `<a href="#" onclick="selectVideo();return false;">${title} </a>`
-        let button = document.createElement("BUTTON")    
+        let button = document.createElement("button");
+        button.type = "button";
+        button.value = "Select Video";
+        button.onclick = selectVideo(videoID);
+
 
 
         document.getElementById('forEachResults').innerHTML +=
