@@ -1,30 +1,30 @@
 listPreviousLoops();
 
-// Original Input button to pull YT link and retrieve videoId with retrieveVideoVariable()
-inputButton.addEventListener('click', function () {
-    let video = '';
-    const inputLink = document.getElementById("linkInput").value
+// // Original Input button to pull YT link and retrieve videoId with retrieveVideoVariable()
+// inputButton.addEventListener('click', function () {
+//     let video = '';
+//     const inputLink = document.getElementById("linkInput").value
 
-    if (inputLink === '') {
-        document.getElementById("loopPlayer").innerHTML = 'Please Enter a YouTube Link to Begin the Loop';
-    } else {
-        video = retrieveVideoVariable(inputLink);
-        let videoPlayer =
-            `<iframe title="loopPlayer" width="560" height="315" src="https://www.youtube.com/embed/${video}?loop=1&playlist=${video}" frameborder="1" allowfullscreen></iframe>`;
-        document.getElementById("loopPlayer").innerHTML = videoPlayer;
+//     if (inputLink === '') {
+//         document.getElementById("loopPlayer").innerHTML = 'Please Enter a YouTube Link to Begin the Loop';
+//     } else {
+//         video = retrieveVideoVariable(inputLink);
+//         let videoPlayer =
+//             `<iframe title="loopPlayer" width="560" height="315" src="https://www.youtube.com/embed/${video}?loop=1&playlist=${video}" frameborder="1" allowfullscreen></iframe>`;
+//         document.getElementById("loopPlayer").innerHTML = videoPlayer;
 
-        localStorage.setItem('videoCode', `${video}`)
+//         localStorage.setItem('videoCode', `${video}`)
 
-    }
-});
+//     }
+// });
 
-// Pulls videoID from link
-function retrieveVideoVariable(fullLink) {
-    const linkSplit = fullLink.split('=');
-    const secondLinkSplit = linkSplit[1].split('&');
+// // Pulls videoID from link
+// function retrieveVideoVariable(fullLink) {
+//     const linkSplit = fullLink.split('=');
+//     const secondLinkSplit = linkSplit[1].split('&');
 
-    return secondLinkSplit[0];
-}
+//     return secondLinkSplit[0];
+// }
 
 //  Lists the previously played video from local storage
 function listPreviousLoops() {
