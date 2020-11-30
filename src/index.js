@@ -52,6 +52,8 @@ function searchYT() {
         });
 }
 
+
+// TODO: Change AutoInvoked selectVideo
 // Displays results from searchYT()
 function displayResults(data) {
     for (let i = 0; i < data.items.length; i++) {
@@ -74,5 +76,18 @@ function displayResults(data) {
 function selectVideo(videoCode) {
     console.log("made it")
     console.log(videoCode)
+
+
+    let videoPlayer0 =
+            `<iframe title="loopPlayer" width="560" height="315" src="https://www.youtube.com/embed/${videoCode}?loop=1&playlist=${videoCode}" frameborder="1" allowfullscreen></iframe>`;
+    
+    document.getElementById("loopPlayer").innerHTML = videoPlayer0;
+     
+    
+    // Local Storage works
+    localStorage.setItem('videoCode', `${videoCode}`)
+
+
+
     return false;
 }
