@@ -17,6 +17,8 @@
 ## Live Demo 
     https://www.project-ouroboros.com/
 
+Note: Live Demo still uses cookies instead of local storage. Will update soon.
+
 ## TODO
 1. Video Search & Display List
 2. List all previous loops (More than most recent one)
