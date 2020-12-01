@@ -62,18 +62,18 @@ function displayResults(data) {
         let title = data.items[i].snippet.title;
         let videoID = data.items[i].id.videoId;
         let videoLink = `https://www.youtube.com/watch?v=${videoID}`
-
-        // let thumbnail = `<a href='#' onclick=${selectVideo(videoID)}> 
-        //                     <img src=${data.items[i].snippet.thumbnails.default.url}>
-        //                 </a>`
+// Below Auto Invokes :(
+        let thumbnail = `<a href='#' onclick=${selectVideo(videoID)}> 
+                            <img src=${data.items[i].snippet.thumbnails.default.url}>
+                        </a>`
 
 // BEGIN THUMBNAIL TESTING - Still auto invokes
-        let thumbnail = `<input type="image" id=${videoID} src="${data.items[i].snippet.thumbnails.default.url}" 
-            onclick=${selectVideo.bind(this)}/>`
+        // let thumbnail = `<input type="image" id=${videoID} src="${data.items[i].snippet.thumbnails.default.url}" 
+        //     onclick=${selectVideo.bind(this)}/>`
 
-            document.getElementById(`${videoID}`).onclick = function() {
+        //     document.getElementById(`${videoID}`).onclick = function() {
                 
-            }();
+        //     }();
 
 // END TESTING
 
@@ -83,24 +83,21 @@ function displayResults(data) {
 }
 
 // Displays selected video displayResults()
-function selectVideo() {
+function selectVideo(videoCode) {
     console.log("made it")
-   
+    console.log(videoCode)
+
+
+ let videoPlayer =
+ `<iframe title="loopPlayer" width="560" height="315" src="https://www.youtube.com/embed/${videoCode}?loop=1&playlist=${videoCode}" frameborder="1" allowfullscreen></iframe>`;
+
+document.getElementById("loopPlayer").innerHTML = videoPlayer;
+
+
+// Local Storage works
+localStorage.setItem('videoCode', `${videoCode}`)
 
 
 
     return false;
 }
-
-
-//  console.log(videoCode)
-
-
-//  let videoPlayer =
-//  `<iframe title="loopPlayer" width="560" height="315" src="https://www.youtube.com/embed/${videoCode}?loop=1&playlist=${videoCode}" frameborder="1" allowfullscreen></iframe>`;
-
-// document.getElementById("loopPlayer").innerHTML = videoPlayer;
-
-
-// // Local Storage works
-// localStorage.setItem('videoCode', `${videoCode}`)
