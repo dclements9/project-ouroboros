@@ -4,7 +4,7 @@
     
     Loops YouTube videos indefinietly.
 
-    Uses **persistent cookies** to allow the previous 'Loop' to be saved for later reference.
+    Uses **Local Storage** to allow the previous 'Loop' to be saved for later reference.
 
 ## Install & Use
     1. `git clone https://github.com/dclements9/project-ouroboros.git`
@@ -12,7 +12,7 @@
     3. Enter the YouTube link into the input field
     4. Press the button and Fire Away!
 
-    Note: If you've previously visited this site and entered a YouTube video, the persistent cookie (If still present) will remember your previous 'Loop'.
+    Note: If you've previously visited this site and entered a YouTube video, the Local Storage entry will remember your previous 'Loop'.
 
 ## Live Demo 
     https://www.project-ouroboros.com/
@@ -20,4 +20,4 @@
 ## TODO
 1. Video Search & Display List
 2. List all previous loops (More than most recent one)
-3. Give choice to delete previous loops from cookie.
+3. Give choice to delete previous loops from local storage.
