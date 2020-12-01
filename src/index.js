@@ -40,6 +40,8 @@ function listPreviousLoops() {
 
 // Search YT and fetch data response
 function searchYT() {
+    document.getElementById('forEachResults').innerHTML = '';
+
     const YOUTUBE_API_KEY = "";
 
     const searchTerm = document.getElementById("searchTermInput").value;
