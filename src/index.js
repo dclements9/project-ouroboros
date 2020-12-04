@@ -31,8 +31,6 @@ function searchYT() {
 // Displays results from searchYT()
 function displayResults(data) {
     for (let i = 0; i < data.items.length; i++) {
-        console.log(data.items[i]);
-
         let title = data.items[i].snippet.title;
         let videoID = data.items[i].id.videoId;
         let videoLink = `https://www.youtube.com/watch?v=${videoID}`
@@ -56,15 +54,12 @@ function displayResults(data) {
 
 // Displays selected video displayResults()
 function selectVideo(videoCode) {
-    console.log("made it")
-    console.log(videoCode)
-
  let videoPlayer =
  `<iframe title="loopPlayer" width="560" height="315" src="https://www.youtube.com/embed/${videoCode}?loop=1&playlist=${videoCode}" frameborder="1" allowfullscreen></iframe>`;
 
 document.getElementById("loopPlayer").innerHTML = videoPlayer;
 
-// Local Storage works
+// Stores Video Code for Previous Loop in Local Storage
 localStorage.setItem('videoCode', `${videoCode}`)
 
     return false;
