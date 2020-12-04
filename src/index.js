@@ -38,14 +38,16 @@ function displayResults(data) {
         let title = data.items[i].snippet.title;
         let videoID = data.items[i].id.videoId;
         let videoLink = `https://www.youtube.com/watch?v=${videoID}`
-// Below Auto Invokes :(
-        let thumbnail = `<a href='#' onclick=${selectVideo(videoID)}> 
-                            <img src=${data.items[i].snippet.thumbnails.default.url}>
-                        </a>`
+// Below Auto Invokes :( 
+// let thumbnail = `<a href='#' onclick=${selectVideo(videoID)}> 
+        //                     <img src=${data.items[i].snippet.thumbnails.default.url}>
+        //                 </a>`
 
 // BEGIN THUMBNAIL TESTING - Still auto invokes
-        // let thumbnail = `<input type="image" id=${videoID} src="${data.items[i].snippet.thumbnails.default.url}" 
-        //     onclick=${selectVideo.bind(this)}/>`
+        let thumbnail = `<input type="image" id='video${i}' name='${videoID}' src="${data.items[i].snippet.thumbnails.default.url}" />`
+
+            // let thumbnail = `<input type="image" id=${videoID} src="${data.items[i].snippet.thumbnails.default.url}" 
+            // onclick=${selectVideo.bind(this)}/>`
 
         //     document.getElementById(`${videoID}`).onclick = function() {
                 
@@ -56,6 +58,16 @@ function displayResults(data) {
         document.getElementById('forEachResults').innerHTML +=
             thumbnail + ' ' + title + '<br>' + '<br>';
     }
+    document.getElementById('video0').onclick = function(){
+        selectVideo(document.getElementById('video0').name);}
+    document.getElementById('video1').onclick = function(){
+        selectVideo(document.getElementById('video1').name);}
+    document.getElementById('video2').onclick = function(){
+        selectVideo(document.getElementById('video2').name);}
+    document.getElementById('video3').onclick = function(){
+        selectVideo(document.getElementById('video3').name);}
+    document.getElementById('video4').onclick = function(){
+        selectVideo(document.getElementById('video4').name);}
 }
 
 // Displays selected video displayResults()
