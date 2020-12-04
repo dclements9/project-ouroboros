@@ -20,6 +20,5 @@
 Note: Live Demo still uses cookies instead of local storage. Will update soon.
 
 ## TODO
-1. Video Search & Display List
-2. List all previous loops (More than most recent one)
-3. Give choice to delete previous loops from local storage.
+1. List all previous loops (More than most recent one)
+2. Give choice to delete previous loops from local storage.
