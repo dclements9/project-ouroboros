@@ -62,5 +62,6 @@ document.getElementById("loopPlayer").innerHTML = videoPlayer;
 // Stores Video Code for Previous Loop in Local Storage
 localStorage.setItem('videoCode', `${videoCode}`)
 
+document.getElementById('forEachResults').innerHTML = '';
     return false;
 }
