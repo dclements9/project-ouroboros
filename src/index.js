@@ -1,11 +1,14 @@
 listPreviousLoops();
 
+// Number of videos to query for.
+const queryItems = 5;
+
 //  Lists the previously played video from local storage
 function listPreviousLoops() {
     if (localStorage.getItem('videoCode')) {
         const code = localStorage.getItem('videoCode')
 
-        let previousPlayer = `<iframe title="previousLoopPlayer" width="560" height="315" src="https://www.youtube.com/embed/${code}?loop=1&playlist=${code}" frameborder="1" allowfullscreen></iframe>`;
+        let previousPlayer = `<iframe title="previousLoopPlayer" src="https://www.youtube.com/embed/${code}?loop=1&playlist=${code}" frameborder="1" allowfullscreen></iframe>`;
         document.getElementById("previousLoops").innerHTML = previousPlayer;
     } else {
         document.getElementById("previousLoops").innerHTML = "Get to Looping";
@@ -19,7 +22,7 @@ function searchYT() {
     const YOUTUBE_API_KEY = "";
 
     const searchTerm = document.getElementById("searchTermInput").value;
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${searchTerm}&type="video"&key=${YOUTUBE_API_KEY}`;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${queryItems}&q=${searchTerm}&type="video"&key=${YOUTUBE_API_KEY}`;
 
     fetch(url)
         .then(response => response.json())
@@ -40,22 +43,18 @@ function displayResults(data) {
         document.getElementById('forEachResults').innerHTML +=
             thumbnail + ' ' + title + '<br>' + '<br>';
     }
-    document.getElementById('video0').onclick = function(){
-        selectVideo(document.getElementById('video0').name);}
-    document.getElementById('video1').onclick = function(){
-        selectVideo(document.getElementById('video1').name);}
-    document.getElementById('video2').onclick = function(){
-        selectVideo(document.getElementById('video2').name);}
-    document.getElementById('video3').onclick = function(){
-        selectVideo(document.getElementById('video3').name);}
-    document.getElementById('video4').onclick = function(){
-        selectVideo(document.getElementById('video4').name);}
+
+    // Add onclick to thumbnails
+    for (let j = 0; j < queryItems; j++){
+        document.getElementById(`video${j}`).onclick = function(){
+            selectVideo(document.getElementById(`video${j}`).name);}
+    } 
 }
 
 // Displays selected video displayResults()
 function selectVideo(videoCode) {
  let videoPlayer =
- `<iframe title="loopPlayer" width="560" height="315" src="https://www.youtube.com/embed/${videoCode}?loop=1&playlist=${videoCode}" frameborder="1" allowfullscreen></iframe>`;
+ `<iframe title="loopPlayer" src="https://www.youtube.com/embed/${videoCode}?loop=1&playlist=${videoCode}" frameborder="1" allowfullscreen></iframe>`;
 
 document.getElementById("loopPlayer").innerHTML = videoPlayer;
 
