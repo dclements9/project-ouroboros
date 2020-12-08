@@ -44,6 +44,7 @@ body {
 iframe{
   border: groove;
   width:95%;
+  height: 250px;
 }
 
 #forEachResults{
