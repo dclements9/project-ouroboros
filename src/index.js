@@ -37,11 +37,12 @@ function displayResults(data) {
         let title = data.items[i].snippet.title;
         let videoID = data.items[i].id.videoId;
         let videoLink = `https://www.youtube.com/watch?v=${videoID}`
+        let label = `<label for="video${i}" hidden>Video${i}</label>`
         let thumbnail = `<input type="image" id='video${i}' name='${videoID}' 
             src="${data.items[i].snippet.thumbnails.default.url}" />`
 
         document.getElementById('forEachResults').innerHTML +=
-            thumbnail + ' ' + title + '<br>' + '<br>';
+            label + thumbnail + ' ' + title + '<br>' + '<br>';
     }
 
     // Add onclick to thumbnails
