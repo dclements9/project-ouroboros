@@ -8,7 +8,7 @@ function listPreviousLoops() {
     if (localStorage.getItem('videoCode')) {
         const code = localStorage.getItem('videoCode')
 
-        let previousPlayer = `<iframe title="previousLoopPlayer" src="https://www.youtube.com/embed/${code}?loop=1&playlist=${code}" frameborder="1" allowfullscreen></iframe>`;
+        let previousPlayer = `<iframe id="previousLoopPlayerFrame" title="previousLoopPlayer" src="https://www.youtube.com/embed/${code}?loop=1&playlist=${code}" frameborder="1" allowfullscreen></iframe>`;
         document.getElementById("previousLoops").innerHTML = previousPlayer;
     } else {
         document.getElementById("previousLoops").innerHTML = "Get to Looping";
@@ -54,7 +54,7 @@ function displayResults(data) {
 // Displays selected video displayResults()
 function selectVideo(videoCode) {
  let videoPlayer =
- `<iframe title="loopPlayer" src="https://www.youtube.com/embed/${videoCode}?loop=1&playlist=${videoCode}" frameborder="1" allowfullscreen></iframe>`;
+ `<iframe id="loopPlayerFrame" title="loopPlayer" src="https://www.youtube.com/embed/${videoCode}?loop=1&playlist=${videoCode}" frameborder="1" allowfullscreen></iframe>`;
 
 document.getElementById("loopPlayer").innerHTML = videoPlayer;
 
