@@ -24,6 +24,7 @@ body {
   color: #fdf2f0;
   border: none;
   border-radius: 8px;
+  box-shadow: 0px 10px 15px #000000;
 }
 
 #searchTermButton:hover{
@@ -39,12 +40,14 @@ body {
   border: none;
   text-align: center;
   width:85%;
+  box-shadow: 0px 10px 15px;
 }
 
 iframe{
   border: groove;
   width:95%;
   height: 250px;
+  box-shadow: 0px 10px 15px;
 }
 
 #forEachResults{
