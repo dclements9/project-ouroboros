@@ -17,5 +17,5 @@
 ## Modify
     To modify the video query amount, change the amount of 'queryItems' in index.js.
 
-## Live Demo 
+## Live
     https://www.project-ouroboros.com/
