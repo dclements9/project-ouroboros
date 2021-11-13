@@ -16,7 +16,7 @@ body {
     padding: 4rem;
     text-align: center;
     background-color: #192136;
-    color: #f73f3f;
+    color: s#f73f3f;
   }
 
   #search__button{
@@ -53,6 +53,6 @@ iframe{
   box-shadow: 0px 10px 15px #000000;
 }
 
-#display__results{
+#results__display{
   text-align: left;
 }
