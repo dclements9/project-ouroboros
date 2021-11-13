@@ -8,20 +8,20 @@ function listPreviousLoops() {
     if (localStorage.getItem('videoCode')) {
         const code = localStorage.getItem('videoCode')
 
-        let previousPlayer = `<iframe id="previousLoopPlayerFrame" title="previousLoopPlayer" src="https://www.youtube.com/embed/${code}?loop=1&playlist=${code}" frameborder="1" allowfullscreen></iframe>`;
-        document.getElementById("previousLoops").innerHTML = previousPlayer;
+        let previousPlayer = `<iframe id="loop__previous__frame" title="previous_loop" src="https://www.youtube.com/embed/${code}?loop=1&playlist=${code}" frameborder="1" allowfullscreen></iframe>`;
+        document.getElementById("loop__previous").innerHTML = previousPlayer;
     } else {
-        document.getElementById("previousLoops").innerHTML = "Get to Looping";
+        document.getElementById("loop__previous").innerHTML = "Get to Looping";
     }
 }
 
 // Search YT and fetch data response
 function searchYT() {
-    document.getElementById('forEachResults').innerHTML = '';
+    document.getElementById('results__display').innerHTML = '';
 
     const YOUTUBE_API_KEY = "";
 
-    const searchTerm = document.getElementById("searchTermInput").value;
+    const searchTerm = document.getElementById("search__input").value;
     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${queryItems}&q=${searchTerm}&type="video"&key=${YOUTUBE_API_KEY}`;
 
     fetch(url)
@@ -41,7 +41,7 @@ function displayResults(data) {
         let thumbnail = `<input type="image" id='video${i}' name='${videoID}' 
             src="${data.items[i].snippet.thumbnails.default.url}" />`
 
-        document.getElementById('forEachResults').innerHTML +=
+        document.getElementById('results__display').innerHTML +=
             label + thumbnail + ' ' + title + '<br>' + '<br>';
     }
 
@@ -55,13 +55,13 @@ function displayResults(data) {
 // Displays selected video displayResults()
 function selectVideo(videoCode) {
  let videoPlayer =
- `<iframe id="loopPlayerFrame" title="loopPlayer" src="https://www.youtube.com/embed/${videoCode}?loop=1&playlist=${videoCode}" frameborder="1" allowfullscreen></iframe>`;
+ `<iframe id="loop_frame" title="loop_box" src="https://www.youtube.com/embed/${videoCode}?loop=1&playlist=${videoCode}" frameborder="1" allowfullscreen></iframe>`;
 
-document.getElementById("loopPlayer").innerHTML = videoPlayer;
+document.getElementById("loop_box").innerHTML = videoPlayer;
 
 // Stores Video Code for Previous Loop in Local Storage
 localStorage.setItem('videoCode', `${videoCode}`)
 
-document.getElementById('forEachResults').innerHTML = '';
+document.getElementById('results__display').innerHTML = '';
     return false;
 }
